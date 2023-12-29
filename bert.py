@@ -242,7 +242,6 @@ def evaluate(
     clf_bert = pd.DataFrame(columns=clfs)
 
     for batch in res:
-        print(batch)
         batch["clf_pred"] = batch["clf_pred"].reshape(-1, 5)
         for row in tqdm(zip(*list(batch.values())[:-1])):
             bert_res.loc[bert_res.shape[0]] = row

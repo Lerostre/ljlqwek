@@ -281,6 +281,8 @@ def inference(texts: str, prefix="test"):
         for idx, l in bert_pretty_res.iterrows():
             print(*l.values, sep="\t", file=f)
         
+    print(clf_bert["clf_pred"])
+    print(ids)
     with open(f'{prefix}_bert_packed_cats.txt', 'w') as f:
         for idx, row in enumerate(clf_bert["clf_pred"].values):
             for cat, sent in zip(
